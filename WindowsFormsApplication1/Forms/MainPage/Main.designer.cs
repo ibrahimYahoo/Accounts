@@ -74,7 +74,7 @@
             this.metroTile7.Size = new System.Drawing.Size(296, 141);
             this.metroTile7.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTile7.TabIndex = 8;
-            this.metroTile7.Text = "Payments";
+            this.metroTile7.Text = "Cash Book";
             this.metroTile7.TileImage = global::WindowsFormsApplication1.Properties.Resources.Cash_Register_52px;
             this.metroTile7.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile7.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;

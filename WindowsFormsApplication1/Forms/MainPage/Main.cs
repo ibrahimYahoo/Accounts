@@ -77,7 +77,7 @@ namespace WindowsFormsApplication1
         {
             this.Hide();
 
-            Payments ac = new Payments();
+            CashBook ac = new CashBook();
             ac.Show();
             ac.WindowState = FormWindowState.Maximized;
 
