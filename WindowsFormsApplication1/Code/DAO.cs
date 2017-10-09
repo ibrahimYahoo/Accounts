@@ -890,6 +890,26 @@ namespace WindowsFormsApplication1.Code
             cmd.ExecuteNonQuery();
         }
 
+        public int getLastPurchaseNo()
+        {
+            DataTable dtOrders = new DataTable();
+
+            dad = new SqlDataAdapter("SELECT  TOP 1 PurNo FROM Purchase ORDER BY PurNo DESC;", conn);
+            dad.Fill(dtOrders);
+            conn.Close();
+            int purchaseNo = Convert.ToInt16(dtOrders.Rows[0][0]);
+            if (purchaseNo.Equals(null))
+            {
+                return 0;
+            }
+            else
+            {
+                return purchaseNo;
+            }
+            //return dtOrders;
+
+        }
+
 
         public void AddGlTransactions(DateTime date,string Narrative,int AccountId,string TransType, string Reference,int Amount,int Balance)
         {

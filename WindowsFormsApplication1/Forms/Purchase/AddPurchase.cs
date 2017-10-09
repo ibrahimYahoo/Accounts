@@ -48,11 +48,16 @@ namespace WindowsFormsApplication1.Forms
             {
                 if (cmbsuppname.SelectedIndex != -1 && cmbItemname.SelectedIndex != -1 && txtItemQuantity.Text != "" && TxtitemPrice.Text != "")
                 {
+
+                    string PurchaseId  = "PUR" + new DAO().getLastPurchaseNo() ;
                     int PId = int.Parse(cmbsuppname.SelectedValue.ToString());
                     string purid = new DAO().GetPurchaseId().ToString();
                     DataTable dt = new DataTable();
                     SqlConnection conn = DBConn.GetInstance();
-                    SqlDataAdapter dad = new SqlDataAdapter("Insert INTO Purchase(IId,PId,PurDate,IPrice,PurPrice,ItemQty,Total) values (@3,@4,@5,@6,@7,@8,@9)", conn);
+                    SqlDataAdapter dad = new SqlDataAdapter("Insert INTO Purchase(PurId,IId,PId,PurDate,IPrice,PurPrice,ItemQty,Total) values (@PurId,@3,@4,@5,@6,@7,@8,@9)", conn);
+
+                    dad.SelectCommand.Parameters.AddWithValue("@PurId", PurchaseId);
+
                     dad.SelectCommand.Parameters.AddWithValue("@3", cmbItemname.SelectedValue);
                     dad.SelectCommand.Parameters.AddWithValue("@4", cmbsuppname.SelectedValue);
                     dad.SelectCommand.Parameters.AddWithValue("@5", cmbpaydate.Value);
@@ -67,8 +72,11 @@ namespace WindowsFormsApplication1.Forms
                     conn.Close();
 
                     int RemainingBalance = new DAO().GetPartyBalance(PId);
-                   new DAO().AddPurchaseTransaction(PId, 0, int.Parse(txtAmountPaid.Text), int.Parse(cmbItemname.SelectedValue.ToString()), int.Parse(txtItemQuantity.Text), "NA", DateTime.Today.Date, 1, RemainingBalance - balance);
-                   new DAO().UpdateQtyAdd(int.Parse(cmbItemname.SelectedValue.ToString()), int.Parse(txtItemQuantity.Text));
+                    new DAO().AddGlTransactions(DateTime.Today.Date, "Purchases", 4, "Dr", PurchaseId, int.Parse(txttotal.Text), 00);
+                    new DAO().AddGlTransactions(DateTime.Today.Date, "Payables", 6, "Cr", PurchaseId, int.Parse(txttotal.Text), 00);
+
+                    // new DAO().AddPurchaseTransaction(PId, 0, int.Parse(txtAmountPaid.Text), int.Parse(cmbItemname.SelectedValue.ToString()), int.Parse(txtItemQuantity.Text), "NA", DateTime.Today.Date, 1, RemainingBalance - balance);
+                    new DAO().UpdateQtyAdd(int.Parse(cmbItemname.SelectedValue.ToString()), int.Parse(txtItemQuantity.Text));
                    new DAO().UpdateOwnerBalance(PId, RemainingBalance - balance);
 
 

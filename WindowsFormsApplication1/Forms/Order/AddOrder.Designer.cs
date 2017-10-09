@@ -49,14 +49,7 @@
             this.mtBack = new MetroFramework.Controls.MetroTile();
             this.mtNew = new MetroFramework.Controls.MetroTile();
             this.mtCreate = new MetroFramework.Controls.MetroTile();
-            this.btnCheckOut = new MetroFramework.Controls.MetroTile();
-            this.lblBalance = new MetroFramework.Controls.MetroLabel();
             this.lblmsg = new MetroFramework.Controls.MetroLabel();
-            this.lblCashBack = new MetroFramework.Controls.MetroLabel();
-            this.txtPay = new System.Windows.Forms.TextBox();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.nmQty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -388,121 +381,16 @@
             this.mtCreate.UseTileImage = true;
             this.mtCreate.Click += new System.EventHandler(this.mtCreate_Click);
             // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.ActiveControl = null;
-            this.btnCheckOut.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCheckOut.BackColor = System.Drawing.Color.Transparent;
-            this.btnCheckOut.Location = new System.Drawing.Point(771, 378);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(143, 92);
-            this.btnCheckOut.TabIndex = 43;
-            this.btnCheckOut.Text = "Check Out";
-            this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCheckOut.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnCheckOut.TileImage = global::WindowsFormsApplication1.Properties.Resources.icons8_Exit_32;
-            this.btnCheckOut.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCheckOut.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.btnCheckOut.UseCustomBackColor = true;
-            this.btnCheckOut.UseSelectable = true;
-            this.btnCheckOut.UseTileImage = true;
-            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblBalance.BackColor = System.Drawing.Color.Transparent;
-            this.lblBalance.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblBalance.ForeColor = System.Drawing.Color.Red;
-            this.lblBalance.Location = new System.Drawing.Point(697, 274);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(217, 42);
-            this.lblBalance.TabIndex = 44;
-            this.lblBalance.UseCustomBackColor = true;
-            this.lblBalance.UseCustomForeColor = true;
-            this.lblBalance.WrapToLine = true;
-            // 
             // lblmsg
             // 
-            this.lblmsg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblmsg.AutoSize = true;
-            this.lblmsg.BackColor = System.Drawing.Color.Transparent;
             this.lblmsg.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblmsg.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblmsg.ForeColor = System.Drawing.Color.White;
-            this.lblmsg.Location = new System.Drawing.Point(608, 67);
+            this.lblmsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblmsg.Location = new System.Drawing.Point(666, 306);
             this.lblmsg.Name = "lblmsg";
             this.lblmsg.Size = new System.Drawing.Size(0, 0);
-            this.lblmsg.TabIndex = 45;
-            this.lblmsg.UseCustomBackColor = true;
-            this.lblmsg.UseCustomForeColor = true;
-            // 
-            // lblCashBack
-            // 
-            this.lblCashBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCashBack.BackColor = System.Drawing.Color.Transparent;
-            this.lblCashBack.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblCashBack.ForeColor = System.Drawing.Color.Red;
-            this.lblCashBack.Location = new System.Drawing.Point(697, 316);
-            this.lblCashBack.Name = "lblCashBack";
-            this.lblCashBack.Size = new System.Drawing.Size(217, 36);
-            this.lblCashBack.TabIndex = 48;
-            this.lblCashBack.UseCustomBackColor = true;
-            this.lblCashBack.UseCustomForeColor = true;
-            this.lblCashBack.WrapToLine = true;
-            // 
-            // txtPay
-            // 
-            this.txtPay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPay.Location = new System.Drawing.Point(797, 241);
-            this.txtPay.Name = "txtPay";
-            this.txtPay.Size = new System.Drawing.Size(117, 26);
-            this.txtPay.TabIndex = 41;
-            this.txtPay.TextChanged += new System.EventHandler(this.txtPay_TextChanged);
-            this.txtPay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPay_KeyPress);
-            // 
-            // txtDiscount
-            // 
-            this.txtDiscount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(797, 203);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(117, 26);
-            this.txtDiscount.TabIndex = 47;
-            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.ForeColor = System.Drawing.Color.White;
-            this.metroLabel10.Location = new System.Drawing.Point(697, 242);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(73, 25);
-            this.metroLabel10.TabIndex = 42;
-            this.metroLabel10.Text = "Paying :";
-            this.metroLabel10.UseCustomBackColor = true;
-            this.metroLabel10.UseCustomForeColor = true;
-            // 
-            // metroLabel11
-            // 
-            this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel11.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel11.ForeColor = System.Drawing.Color.White;
-            this.metroLabel11.Location = new System.Drawing.Point(697, 204);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(91, 25);
-            this.metroLabel11.TabIndex = 46;
-            this.metroLabel11.Text = "Discount: ";
-            this.metroLabel11.UseCustomBackColor = true;
-            this.metroLabel11.UseCustomForeColor = true;
+            this.lblmsg.TabIndex = 40;
             // 
             // AddOrder
             // 
@@ -510,14 +398,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(960, 487);
-            this.Controls.Add(this.lblCashBack);
-            this.Controls.Add(this.txtDiscount);
-            this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.lblmsg);
-            this.Controls.Add(this.lblBalance);
-            this.Controls.Add(this.btnCheckOut);
-            this.Controls.Add(this.metroLabel10);
-            this.Controls.Add(this.txtPay);
             this.Controls.Add(this.lblTotalQty);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.lblSubtotal);
@@ -574,13 +455,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel lblTotalQty;
         public MetroFramework.Controls.MetroLabel lblTotal;
-        private MetroFramework.Controls.MetroTile btnCheckOut;
-        private MetroFramework.Controls.MetroLabel lblBalance;
         private MetroFramework.Controls.MetroLabel lblmsg;
-        private MetroFramework.Controls.MetroLabel lblCashBack;
-        private System.Windows.Forms.TextBox txtPay;
-        private System.Windows.Forms.TextBox txtDiscount;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
     }
 }

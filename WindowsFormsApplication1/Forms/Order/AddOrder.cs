@@ -23,14 +23,14 @@ namespace WindowsFormsApplication1.Forms.Order
             InitializeComponent();
             txtOrderNo.Text = orderNo.ToString();           
             DataTable dt = new DAO().GetOrderDetails(orderNo);
-            if (dt.Rows.Count != 0)
-            {
-                btnCheckOut.Show();
-            }
-            else
-            {
-                btnCheckOut.Hide();
-            }
+            //if (dt.Rows.Count != 0)
+            //{
+            //    btnCheckOut.Show();
+            //}
+            //else
+            //{
+            //    btnCheckOut.Hide();
+            //}
             try
             {
                 int cusid = int.Parse(dt.Rows[0][2].ToString());
@@ -56,7 +56,7 @@ namespace WindowsFormsApplication1.Forms.Order
             getCustomers();
             getItems();
             dtODate.MinDate = DateTime.Today.Date;
-            btnCheckOut.Hide();
+            //btnCheckOut.Hide();
         }
 
         void getItems()
@@ -148,7 +148,10 @@ namespace WindowsFormsApplication1.Forms.Order
                     new DAO().RemoveQty(qty, itemid);
                     Clear_Limited();
                     lblTotalQty.Text = new DAO().getQty(itemid).ToString();
-                    btnCheckOut.Show();
+                       new DAO().AddGlTransactions(DateTime.Today.Date, "Sales", 4, "Dr", "ORD" + txtOrderNo.Text, int.Parse(lblTotal.Text), 00);
+                       new DAO().AddGlTransactions(DateTime.Today.Date, "Recievables", 6, "Cr", "ORD" + txtOrderNo.Text, int.Parse(lblTotal.Text), 00);
+
+                    //btnCheckOut.Show();
 
                 }
                 else
@@ -235,44 +238,44 @@ namespace WindowsFormsApplication1.Forms.Order
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int PId = int.Parse(cbCustName.SelectedValue.ToString());
-                int amount = int.Parse(lblTotal.Text);
-                int balance = amount - int.Parse(txtPay.Text);
+            //try
+            //{
+            //    int PId = int.Parse(cbCustName.SelectedValue.ToString());
+            //    int amount = int.Parse(lblTotal.Text);
+            //    int balance = amount - int.Parse(txtPay.Text);
 
 
 
-                int pay = int.Parse(txtPay.Text);
+            //    int pay = int.Parse(txtPay.Text);
 
-                if (pay > amount)
-                {
-                    lblCashBack.ForeColor = Color.Green;
-                    lblCashBack.Text = "Cash Back: " + (pay - amount).ToString();
-                    balance = 0;
-                }
+            //    if (pay > amount)
+            //    {
+            //        lblCashBack.ForeColor = Color.Green;
+            //        lblCashBack.Text = "Cash Back: " + (pay - amount).ToString();
+            //        balance = 0;
+            //    }
 
-                int RemainingBalance  = new DAO().GetPartyBalance(PId);
-                new DAO().AddGlTransactions(DateTime.Today.Date, "Sales", 4, "Dr", "ORD" + txtOrderNo.Text, int.Parse(lblTotal.Text), 00);
-                new DAO().AddGlTransactions(DateTime.Today.Date, "Recievables", 6, "Cr", "ORD" + txtOrderNo.Text, int.Parse(lblTotal.Text), 00);
+            //    int RemainingBalance  = new DAO().GetPartyBalance(PId);
+            //    new DAO().AddGlTransactions(DateTime.Today.Date, "Sales", 4, "Dr", "ORD" + txtOrderNo.Text, int.Parse(lblTotal.Text), 00);
+            //    new DAO().AddGlTransactions(DateTime.Today.Date, "Recievables", 6, "Cr", "ORD" + txtOrderNo.Text, int.Parse(lblTotal.Text), 00);
 
-                //new DAO().AddOrderTransaction(PId, pay, 0, int.Parse(cbItems.SelectedValue.ToString()), int.Parse(nmQty.Value.ToString()), "NA", DateTime.Today.Date, 0, RemainingBalance + balance);
-                new DAO().UpdatePartyBalance(PId, RemainingBalance + balance);
+            //    //new DAO().AddOrderTransaction(PId, pay, 0, int.Parse(cbItems.SelectedValue.ToString()), int.Parse(nmQty.Value.ToString()), "NA", DateTime.Today.Date, 0, RemainingBalance + balance);
+            //    new DAO().UpdatePartyBalance(PId, RemainingBalance + balance);
                 
 
-                //new DAO().AddCustomerPayment(dtODate.Text, cid, balance, amount);
-                lblBalance.ForeColor = Color.Green;
-                lblBalance.Text = "Checkout Successfull wtih remaining balance : " + balance;
-                txtPay.Text = "";
-                btnCheckOut.Hide();
-                //CheckOutSlip cs = new CheckOutSlip(int.Parse(txtOrderNo.Text));
-                //cs.Show();
+            //    //new DAO().AddCustomerPayment(dtODate.Text, cid, balance, amount);
+            //    lblBalance.ForeColor = Color.Green;
+            //    lblBalance.Text = "Checkout Successfull wtih remaining balance : " + balance;
+            //    txtPay.Text = "";
+            //    btnCheckOut.Hide();
+            //    //CheckOutSlip cs = new CheckOutSlip(int.Parse(txtOrderNo.Text));
+            //    //cs.Show();
 
-            }
-            catch (Exception ex)
-            {
-               // MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //   // MessageBox.Show(ex.Message);
+            //}
 
         }
 
@@ -281,57 +284,57 @@ namespace WindowsFormsApplication1.Forms.Order
 
         }
 
-        private void txtPay_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar) || e.KeyChar == 32)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-                System.Media.SystemSounds.Beep.Play();
-                lblmsg.Text = "Wrong Input!  Error";
-            }
-        }
+        //private void txtPay_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar) || e.KeyChar == 32)
+        //    {
+        //        e.Handled = false;
+        //    }
+        //    else
+        //    {
+        //        e.Handled = true;
+        //        System.Media.SystemSounds.Beep.Play();
+        //        lblmsg.Text = "Wrong Input!  Error";
+        //    }
+        //}
 
         private void txtDiscount_KeyUp(object sender, KeyEventArgs e)
         {
 
         }
 
-        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (txtDiscount.Text.Equals(""))
-            {
-                lblTotal.Text = new DAO().getTotal(int.Parse(txtOrderNo.Text)).ToString();
-            }
-            else
-            {
-                if (e.KeyChar == 13)
-                {
-                    try
-                    {
-                        if (txtDiscount.Text.Equals(""))
-                        {
-                            lblTotal.Text = new DAO().getTotal(int.Parse(txtOrderNo.Text)).ToString();
-                        }
-                        else
-                        {
-                            int total = int.Parse(lblTotal.Text);
-                            int discount = int.Parse(txtDiscount.Text);
-                            lblTotal.Text = (total - discount).ToString();
-                        }
+        //private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (txtDiscount.Text.Equals(""))
+        //    {
+        //        lblTotal.Text = new DAO().getTotal(int.Parse(txtOrderNo.Text)).ToString();
+        //    }
+        //    else
+        //    {
+        //        if (e.KeyChar == 13)
+        //        {
+        //            try
+        //            {
+        //                if (txtDiscount.Text.Equals(""))
+        //                {
+        //                    lblTotal.Text = new DAO().getTotal(int.Parse(txtOrderNo.Text)).ToString();
+        //                }
+        //                else
+        //                {
+        //                    int total = int.Parse(lblTotal.Text);
+        //                    int discount = int.Parse(txtDiscount.Text);
+        //                    lblTotal.Text = (total - discount).ToString();
+        //                }
 
-                    }
-                    catch (Exception ex)
-                    {
+        //            }
+        //            catch (Exception ex)
+        //            {
 
-                    }
-                }
+        //            }
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
         
     }
