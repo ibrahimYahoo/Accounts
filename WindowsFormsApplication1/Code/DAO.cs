@@ -847,7 +847,7 @@ namespace WindowsFormsApplication1.Code
         {
             DataTable dtOrders = new DataTable();
 
-            dad = new SqlDataAdapter("select * from GLtransactions;", conn);
+            dad = new SqlDataAdapter("select * from CashBook;", conn);
            // dad.SelectCommand.Parameters.AddWithValue("@orderno", orderno);
             dad.Fill(dtOrders);
             conn.Close();
@@ -932,6 +932,31 @@ namespace WindowsFormsApplication1.Code
                 int i = 0;
             }
         }
+
+        public DataTable getCashBookReciepts()
+        {
+            DataTable dt = new DataTable();
+            conn = DBConn.GetInstance();
+
+            SqlDataAdapter dad = new SqlDataAdapter("SELECT Date, Narration, ReferenceNo,Cash,Bank from CashBook WHERE Type = 'Reciept' ", conn);
+
+            dad.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+        public DataTable getCashBookPayments()
+        {
+            DataTable dt = new DataTable();
+            conn = DBConn.GetInstance();
+
+            SqlDataAdapter dad = new SqlDataAdapter("SELECT Date, Narration, ReferenceNo,Cash,Bank from CashBook WHERE Type = 'Payments' ", conn);
+
+            dad.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+
+
 
         //public void AddGlSalesTransaction(DateTime date, string Narrative, int AccountId, string TransType, string Reference, int Balance)
         //{

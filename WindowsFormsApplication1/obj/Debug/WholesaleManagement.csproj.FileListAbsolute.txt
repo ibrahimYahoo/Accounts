@@ -235,3 +235,6 @@ E:\office\desktop softwares\Mss complete backup\test\WindowsFormsApplication1\bi
 E:\office\desktop softwares\Mss complete backup\test\WindowsFormsApplication1\bin\Debug\stdole.dll
 E:\office\desktop softwares\Mss complete backup\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Forms.JournalVoucher.resources
 E:\office\desktop softwares\Mss complete backup\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Forms.GeneralLedger.resources
+E:\office\desktop softwares\Mss complete backup\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Forms.Cashbook.AddReciept.resources
+E:\office\desktop softwares\Mss complete backup\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Forms.CashBook.resources
+E:\office\desktop softwares\Mss complete backup\test\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Forms.Cashbook.AddPayment.resources

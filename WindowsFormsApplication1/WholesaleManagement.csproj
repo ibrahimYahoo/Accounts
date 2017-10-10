@@ -177,6 +177,24 @@
     <Compile Include="Forms\Accounts\frmAccounts.designer.cs">
       <DependentUpon>frmAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Cashbook\AddPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cashbook\AddPayment.Designer.cs">
+      <DependentUpon>AddPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cashbook\AddReciept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cashbook\AddReciept.Designer.cs">
+      <DependentUpon>AddReciept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cashbook\CashBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cashbook\CashBook.Designer.cs">
+      <DependentUpon>CashBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Customer\AddCus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -389,6 +407,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Accounts\frmAccounts.resx">
       <DependentUpon>frmAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cashbook\AddPayment.resx">
+      <DependentUpon>AddPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cashbook\AddReciept.resx">
+      <DependentUpon>AddReciept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cashbook\CashBook.resx">
+      <DependentUpon>CashBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Customer\AddCus.resx">
       <DependentUpon>AddCus.cs</DependentUpon>

@@ -434,14 +434,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Wholesale Management.exe" size="2402816">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Wholesale Management.exe" size="2416128">
       <assemblyIdentity name="Wholesale Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>83zCOOJK08jLxTJaS1MDbNpK1W3y0iRniqqI2lyRDRc=</dsig:DigestValue>
+        <dsig:DigestValue>ImGBxriWcw8zckDyAHltHyTZn0YPFKZx/EUXGNB/O1g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -451,7 +451,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kA1du/ooN7pnVAwc+t3myLH3VvSKWzt5ucOY389KrBQ=</dsig:DigestValue>
+      <dsig:DigestValue>Wk4XBQjWHd4aWAVNxWdKag4OTfSN6iE9hMTwuuUdSys=</dsig:DigestValue>
     </hash>
   </file>
   <file name="pms_log.ldf" size="3538944" writeableType="applicationData">
@@ -460,7 +460,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>5WWjgw+kMe8glpcU2wd+/R0m23dER5I03tqXGnvZIyI=</dsig:DigestValue>
+      <dsig:DigestValue>py/gubrF5hkCfeoP7CcRDhSgTtECaYmXTalr9IswZTI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\Add List_32px.png" size="690">
